@@ -1,6 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
 import * as path from 'path';
-import { reporterDateTimeFormat } from './framework/Helper';
+import * as Helper from './framework/Helper';
+
+const reportDate = Helper.reporterDateTimeFormat();
 
 /**
  * Read environment variables from file.
@@ -28,7 +30,7 @@ export default defineConfig({
     [
       'html',
       {
-        outputFolder: path.join(__dirname, `playwright-report`, `results-${reporterDateTimeFormat()}`),
+        outputFolder: path.join(__dirname, `playwright-report`, `playwright-report-${reportDate}`),
         open: 'never',
       },
     ],

@@ -7,7 +7,6 @@ export function reporterDateTimeFormat() {
     const hours = String(date.getHours()).padStart(2, '0');
     const minutes = String(date.getMinutes()).padStart(2, '0');
     const seconds = String(date.getSeconds()).padStart(2, '0');
-  
-    console.log(`Generating new date-time: ${year}-${month}-${day}_${hours}-${minutes}-${seconds}`);
+    
     return `${year}-${month}-${day}_${hours}-${minutes}-${seconds}`;
-  }
+}
