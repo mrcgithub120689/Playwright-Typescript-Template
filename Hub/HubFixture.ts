@@ -1,5 +1,5 @@
 import { test as base } from '@playwright/test';
-import MyerCommonPage from './pages/MyerCommonPage';
+import MyerCommonPage from './pages/Myer/MyerCommonPage';
 
 type MyerFixture = {
     myerCommonPage: MyerCommonPage;

@@ -1,5 +1,5 @@
-import { expect, Locator, Page } from '@playwright/test';
-import BasePage from '../../framework/BasePage';
+import { Locator, Page } from '@playwright/test';
+import BasePage from '../../../framework/BasePage';
 
 export default class MyerCommonPage extends BasePage  { 
     public readonly header: Locator;
