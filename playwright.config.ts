@@ -1,8 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
 import * as path from 'path';
-import * as Helper from './framework/Helper';
+import * as helper from './framework/helper'
 
-const reportDate = Helper.reporterDateTimeFormat();
+const reportDate = helper.reporterDateTimeFormat();
 
 /**
  * Read environment variables from file.

@@ -1,5 +1,5 @@
 import { expect } from "@playwright/test";
-import { test } from "../HubFixture";
+import { test } from "../hub-fixture";
 
 test.describe(`Myer Sample Tests`, () => {
     test(`Assert Myer Page Loaded`, async({myerCommonPage}) => {
