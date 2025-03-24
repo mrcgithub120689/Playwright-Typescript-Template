@@ -1,8 +1,8 @@
 import { expect } from "@playwright/test";
 import { test } from "../hub-fixture";
 
-test.describe(`Myer Sample Tests`, () => {
-    test(`Assert Myer Page Loaded`, async({myerCommonPage}) => {
+test.describe(`Myer Sample Tests`, {tag: ['@tag1', '@tag2'],}, () => {
+    test(`Assert Myer Page Loaded`, {tag: ['@slow', '@vrt'],}, async({myerCommonPage}) => {
         await myerCommonPage.goToUrl("https://www.myer.com.au");
         
         expect(myerCommonPage.header).toBeVisible();
