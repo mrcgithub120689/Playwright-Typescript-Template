@@ -9,13 +9,14 @@
 TODO:
 
 ## Setup
-- Playwright Installation
-- Dotenv
-TODO:
-
+- [Playwright Installation](https://playwright.dev/docs/intro#installing-playwright)
+- Dotenv (optional)
 ```
-//code
+npm install dotenv
 ```
 
 ## Contributors
 TODO:
+
+## Important Links
+ - [Annotations](https://playwright.dev/docs/test-annotations)

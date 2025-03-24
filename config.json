@@ -1,0 +1,16 @@
+{
+  "common": {
+    "timeout": 30000,
+    "featureFlag": true
+  },
+  "sit": {
+    "baseUrl": "https://sit.example.com",
+    "username": "sit_user",
+    "password": "sit_password"
+  },
+  "uat": {
+    "baseUrl": "https://uat.example.com",
+    "username": "uat_user",
+    "password": "uat_password"
+  }
+}
