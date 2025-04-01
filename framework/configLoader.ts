@@ -19,4 +19,4 @@ const currentEnv = process.env.ENV || 'sit';
 
 // Export environment-specific and common configurations
 export const configEnv = config[currentEnv];
-export const configCommon = config["common"];
+export const configCommon = config['common'];
