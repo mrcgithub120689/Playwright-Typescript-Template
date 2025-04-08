@@ -55,7 +55,8 @@ export default class BasePage {
         // Use 'page.waitForFunction' to wait until the document's title is not null or an empty string
         await this.page.waitForFunction(
             // JavaScript function to be evaluated in the browser context
-            () => document.title !== null && document.title.trim() !== ''
+            () => document.title !== null && document.title.trim() !== '',
+            { timeout: 10000 }
         );
     }
 }
