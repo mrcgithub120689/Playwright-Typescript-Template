@@ -1,6 +1,6 @@
 import { test as base } from '@playwright/test';
 import MyerCommonPage from './pages/myer/myer-common-page';
-import { RestfulApiDevApi } from './api/Restful-API-Dev/restful-api-dev-api';
+import { RestfulApiDevApi } from './api/restful-api-dev/restful-api-dev-api';
 
 type HubFixture = {
     myerCommonPage: MyerCommonPage;

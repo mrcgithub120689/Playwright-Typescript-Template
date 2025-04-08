@@ -52,18 +52,35 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+    // Project for API tests
+    // use code below to test match multiple files
+    // testMatch: ['**/*.ui.spec.ts', '**/*.e2e.spec.ts'], // Match UI and E2E test files
     {
-      name: 'chromium',
+      name: 'API Tests',
+      testMatch: '**/*.api.spec.ts', // Match API test files
+      use: {
+        // You can specify any API-specific settings here
+      },
+    },
+
+    // Project for UI tests in Chromium
+    {
+      name: 'UI Tests - Chromium',
+      testMatch: '**/*.ui.spec.ts', // Match UI test files
       use: { ...devices['Desktop Chrome'] },
     },
 
+    // Project for UI tests in Firefox
     {
-      name: 'firefox',
+      name: 'UI Tests - Firefox',
+      testMatch: '**/*.ui.spec.ts', // Match UI test files
       use: { ...devices['Desktop Firefox'] },
     },
 
+    // Project for UI tests in WebKit
     {
-      name: 'webkit',
+      name: 'UI Tests - WebKit',
+      testMatch: '**/*.ui.spec.ts', // Match UI test files
       use: { ...devices['Desktop Safari'] },
     },
 
