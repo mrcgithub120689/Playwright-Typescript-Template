@@ -3,7 +3,7 @@ import BaseApi from "../../../framework/base-api";
 
 const baseURI = 'https://api.restful-api.dev/objects';
 
-export class RestfulApiDevApi extends BaseApi {
+export default class RestfulApiDevApi extends BaseApi {
 
     // Method to fetch objects from the API
     async getObjects(): Promise<any> {

@@ -5,6 +5,9 @@ import config from '../config.json';
 // Load environment variables from .env file
 dotenv.config({ path: path.resolve(__dirname, '..', '.env') });
 
+// Determine the current environment
+const currentEnv = (process.env.ENV || 'sit').toLowerCase();
+
 // const requiredEnvVars = ['USERNAME', 'PASSWORD'];
 // requiredEnvVars.forEach((varName) => {
 //   console.log(`Checking ${varName}:`, process.env[varName]);
@@ -14,9 +17,7 @@ dotenv.config({ path: path.resolve(__dirname, '..', '.env') });
 //   }
 // });
 
-// Determine the current environment
-const currentEnv = process.env.ENV || 'sit';
 
-// Export environment-specific and common configurations
-export const configEnv = config[currentEnv];
-export const configCommon = config['common'];
+// Access environment-specific and common configurations directly
+export const configCommon = config.common;
+export const configEnv = config[currentEnv as keyof typeof config];
