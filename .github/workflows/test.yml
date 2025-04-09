@@ -50,7 +50,7 @@ jobs:
       run: npx tsc
     
     - name: Run tests
-      run: npx playwright test
+      run: npx playwright test --grep-invert @Fail
       # env:
         # LOG_LEVEL: ${{ inputs.logLevel }}
         # TEST_TAGS: ${{ inputs.tags }}

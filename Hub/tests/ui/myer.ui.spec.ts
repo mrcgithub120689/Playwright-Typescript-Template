@@ -1,7 +1,7 @@
 import { expect } from '@playwright/test';
 import { test } from '../../hub-fixture';
 
-test.describe(`Myer Sample Tests`, {tag: ['@UI', '@tag2'],}, () => {
+test.describe(`Myer Sample Tests`, {tag: ['@UI', '@Sample']}, () => {
     test(`Assert Myer Page Loaded`, {tag: ['@UI'],}, async({myerCommonPage}) => {
         await myerCommonPage.goToUrl('https://www.myer.com.au');
         
@@ -10,7 +10,7 @@ test.describe(`Myer Sample Tests`, {tag: ['@UI', '@tag2'],}, () => {
         expect(title).toContain('MYER | Shop Fashion');
     });
 
-    test(`Assert Myer Page Loaded with Screenshot`, {tag: ['@UI', '@Screenshot'],}, async({myerCommonPage}, testInfo) => {
+    test(`Assert Myer Page Loaded with Screenshot`, {tag: ['@UI', '@Screenshot']}, async({myerCommonPage}, testInfo) => {
         await myerCommonPage.goToUrl('https://www.myer.com.au');
         
         await expect(myerCommonPage.header).toBeVisible();
@@ -20,7 +20,7 @@ test.describe(`Myer Sample Tests`, {tag: ['@UI', '@tag2'],}, () => {
         await myerCommonPage.screenshot(testInfo, 'trial');
     });
 
-    test(`Test Fail1`, async({myerCommonPage}) => {
+    test(`Test Fail1`, {tag: ['@Fail']}, async({myerCommonPage}) => {
         await myerCommonPage.goToUrl('https://www.myer.com.au');
         
         await expect(myerCommonPage.header).toBeVisible();
@@ -28,7 +28,7 @@ test.describe(`Myer Sample Tests`, {tag: ['@UI', '@tag2'],}, () => {
         expect(title).toContain('Fail1');
     });
 
-    test(`Test Fail2`, async({myerCommonPage}) => {
+    test(`Test Fail2`, {tag: ['@Fail']}, async({myerCommonPage}) => {
         await myerCommonPage.goToUrl('https://www.google.com');
         
         await expect(myerCommonPage.header).toBeVisible();
