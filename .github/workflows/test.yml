@@ -56,7 +56,8 @@ jobs:
         # TEST_TAGS: ${{ inputs.tags }}
         # ENV: ${{ inputs.environment }}
         
-    - name: Download Playwright HTML report
-      uses: actions/download-artifact@v4
+    - name: Upload Playwright HTML report
+      uses: actions/upload-artifact@v4
       with:
-        name: index.html
+        name: playwright-html-report
+        path: playwright-report/playwright-report-*/** # Use wildcard to match all files in the dynamic directory
