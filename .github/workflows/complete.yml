@@ -20,7 +20,7 @@ on:
       environment:
         description: 'Environment to run tests against'
         required: false
-        default: 'SIT'
+        default: 'UAT'
         type: choice
         options:
           - SIT

@@ -21,3 +21,4 @@ const currentEnv = (process.env.ENV || 'sit').toLowerCase();
 // Access environment-specific and common configurations directly
 export const configCommon = config.common;
 export const configEnv = config[currentEnv as keyof typeof config];
+console.log(currentEnv);
