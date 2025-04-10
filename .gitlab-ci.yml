@@ -10,9 +10,9 @@ test:
   image: mcr.microsoft.com/playwright:latest  # Use the latest version available
   script:
     - npm ci
+    - npx tsc
     - npx playwright install --with-deps
     - export ENV=${ENV}
-    - npx tsc
     - npx playwright test --grep-invert @Fail
   artifacts:
     paths:
