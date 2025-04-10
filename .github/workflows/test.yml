@@ -56,7 +56,7 @@ jobs:
         # TEST_TAGS: ${{ inputs.tags }}
         # ENV: ${{ inputs.environment }}
         
-    - name: Upload Playwright HTML report
-      uses: actions/upload-artifact@v3
+    - name: Download Playwright HTML report
+      uses: actions/download-artifact@v4
       with:
         name: index.html
