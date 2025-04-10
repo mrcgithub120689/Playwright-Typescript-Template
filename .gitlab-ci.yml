@@ -1,0 +1,23 @@
+stages:
+  - test
+
+variables:
+  NODE_VERSION: "16"
+  ENV: "UAT"  # Default environment
+
+test:
+  stage: test
+  image: mcr.microsoft.com/playwright:latest  # Use the latest version available
+  script:
+    - npm ci
+    - npx playwright install --with-deps
+    - export ENV=${ENV}
+    - npx tsc
+    - npx playwright test --grep-invert @Fail
+  artifacts:
+    paths:
+      - playwright-report/
+    expire_in: 1 week
+  when: manual  # This makes the job manually triggered
+  only:
+    - branches  # Adjust this as needed to control when the job can be triggered
