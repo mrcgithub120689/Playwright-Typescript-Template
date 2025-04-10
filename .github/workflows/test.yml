@@ -55,3 +55,9 @@ jobs:
         # LOG_LEVEL: ${{ inputs.logLevel }}
         # TEST_TAGS: ${{ inputs.tags }}
         # ENV: ${{ inputs.environment }}
+        
+    - name: Upload Playwright HTML report
+      uses: actions/upload-artifact@v4
+      with:
+        name: playwright-html-report
+        path: playwright-report/playwright-report-*/** # Use wildcard to match all files in the dynamic directory
