@@ -20,3 +20,10 @@ TODO:
 
 ## Important Links
  - [Annotations](https://playwright.dev/docs/test-annotations)
+ - [Mermaid Documentation](https://mermaid.js.org/syntax/flowchart.html)
+
+## Extensions
+- GitHub Actions
+- Markdown Preview Mermaid Support
+- Material Icon Theme
+- Playwright Test for VSCode
