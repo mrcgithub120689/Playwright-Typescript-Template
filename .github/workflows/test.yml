@@ -55,3 +55,8 @@ jobs:
         # LOG_LEVEL: ${{ inputs.logLevel }}
         # TEST_TAGS: ${{ inputs.tags }}
         # ENV: ${{ inputs.environment }}
+        
+    - name: Upload Playwright HTML report
+      uses: actions/upload-artifact@v3
+      with:
+        name: index.html
