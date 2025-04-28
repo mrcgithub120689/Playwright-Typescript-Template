@@ -21,4 +21,22 @@ export default class RestfulApiDevApi extends BaseApi {
         // Parse and return the JSON body from the response
         return this.apiResponse.json();
     }
+
+    // Method to fetch objects from the API
+    async getObjectById(id: string): Promise<any> {
+        // Create a new API request context
+        // This context is used to make HTTP requests
+        this.apiRequestContext = await request.newContext();
+
+        // Perform a GET request to the specified requestUri
+        this.requestUri = baseURI + `/${id}`;
+        this.apiResponse = await this.apiRequestContext.get(this.requestUri);
+
+        // Assert that the response status is 200 (OK)
+        // This ensures that the request was successful
+        expect(this.apiResponse.status()).toBe(200);
+
+        // Parse and return the JSON body from the response
+        return this.apiResponse.json();
+    }
 }

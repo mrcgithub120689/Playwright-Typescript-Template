@@ -9,4 +9,10 @@ test.describe(`Sample API Tests`, {tag: ['@API', '@Sample']}, () => {
         console.log(JSON.stringify(configEnv, null, 2));
         expect(objects.length).toEqual(13);
     });
+
+    test(`Get Objects By Id`, {tag: ['@GetById']}, async({restfulApiDevApi}) => {
+        let object = await restfulApiDevApi.getObjectById("7");
+        console.log(JSON.stringify(object, null, 2));
+        expect(object.data.price).toEqual(1849.99);
+    });
 });

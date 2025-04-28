@@ -67,6 +67,8 @@ export default defineConfig({
     {
       name: 'UI Tests - Chromium',
       testMatch: '**/*.ui.spec.ts', // Match UI test files
+      // testMatch: ['**/*.ui.spec.ts', '**/*.integration.spec.ts'], // Match both UI and integration test files
+      // testMatch: '**/*.(ui.spec|integration).ts', // Match both UI and integration test files
       use: { ...devices['Desktop Chrome'] },
     },
 
