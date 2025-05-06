@@ -40,3 +40,31 @@ export default class RestfulApiDevApi extends BaseApi {
         return this.apiResponse.json();
     }
 }
+
+
+//NOTES
+// // generate token for authorization
+// export async function generateToken(): Promise<JSON> {
+//     const response = await fetch(`https://login.microsoftonline.com/${tenantId}/oauth2/v2.0/token`, {
+//         method: 'POST',
+//         body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${clientSecret}&scope=${scope}`,
+//         headers: {
+//             'Content-Type': 'application/x-www-form-urlencoded'
+//         }
+//     });
+
+//     const responseJson = await response.json();
+//     expect(responseJson["access_token"]).toBeTruthy();
+//     expect(responseJson["token_type"]).toBeTruthy();
+
+//     return responseJson;
+// }
+
+        // use this line if you need special authorization and headers
+        // this.apiRequestContext = await request.newContext({extraHTTPHeaders: {Authorization: `${this.tokenResponse["token_type"]} ${this.tokenResponse["access_token"]}`, 
+        //     "Content-Type": `application/json`,
+        //     "If-Match": `*`
+        // }});
+
+// use this line if request has payload
+// this.apiResponse = await (this.apiRequestContext).post(this.requestUri, {data: payload});

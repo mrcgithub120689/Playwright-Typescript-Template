@@ -1,0 +1,16 @@
+# DEMO
+- Folder Structure
+    - Framework shared
+    - Project 1
+    - Project 2
+- Fixtures
+- Config
+    - playwright.config.ts
+    - .env
+    - config.json
+- Workflows
+    - Github
+    - Gitlab
+- Sample Web
+- Sample Api
+- Sample Integration

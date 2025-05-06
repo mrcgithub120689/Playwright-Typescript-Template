@@ -2,6 +2,18 @@ import { expect } from '@playwright/test';
 import { test } from '../../hub-fixture';
 
 test.describe(`Myer Sample Tests`, {tag: ['@UI', '@Sample']}, () => {
+    test.beforeEach(async () => {
+        // Setup code that runs before each test
+        console.log('Running setup before each test');
+        // You can perform actions like resetting state or navigating to a starting URL
+    });
+    
+    test.afterEach(async () => {
+        // Setup code that runs after each test
+        console.log('Running setup after each test');
+        // You can perform actions like resetting state or navigating to a starting URL
+    });
+
     test(`Assert Myer Page Loaded`, {tag: ['@UI'],}, async({myerCommonPage}) => {
         await myerCommonPage.goToUrl('https://www.myer.com.au');
         

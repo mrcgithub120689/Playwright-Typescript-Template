@@ -22,3 +22,51 @@ test:
   only:
     - branches
 
+# # Optional: Manual trigger with environment selection
+# workflow:
+#   rules:
+#     - if: '$CI_PIPELINE_SOURCE == "web"'
+#       variables:
+#         ENV: "UAT"
+#     - if: '$CI_PIPELINE_SOURCE == "schedule"'
+#       variables:
+#         ENV: "SIT"
+
+
+# stages:
+#   - compile
+#   - test
+
+# variables:
+#   NODE_VERSION: "16"
+#   ENV: "UAT" # Default environment
+
+# compile:
+#   stage: compile
+#   image: node:${NODE_VERSION}
+#   script:
+#     - npm ci
+#     - npx tsc
+#   artifacts:
+#     paths:
+#       - dist/ # Assuming compiled files are in the 'dist' directory
+#   rules:
+#     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"' # Run on merge requests
+#     - when: manual # Allow manual triggering
+
+# test:
+#   stage: test
+#   image: node:${NODE_VERSION}
+#   dependencies:
+#     - compile
+#   script:
+#     - npm ci
+#     - npx playwright install --with-deps
+#     - npx playwright test --grep-invert @Fail
+#   artifacts:
+#     paths:
+#       - playwright-report/
+#   rules:
+#     - when: manual # Run only when manually triggered
+#   environment:
+#     name: $ENV

@@ -22,3 +22,13 @@ export const test = base.extend<HubFixture>({
         await use(new RestfulApiDevApi());
     },
 });
+
+test.beforeAll(async () => {
+    // Setup code that runs once before all tests
+    console.log('Running setup before all tests');
+});
+
+test.afterAll(async () => {
+    // Setup code that runs once after all tests
+    console.log('Running setup after all tests');
+});
