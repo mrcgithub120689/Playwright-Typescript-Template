@@ -47,8 +47,13 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: playwright-html-report
-        path: playwright-report/playwright-report-*/** # Use wildcard to match all files in the dynamic directory
-        
+        path: playwright-report
+
+    - name: Upload Playwright Traces
+      uses: actions/upload-artifact@v4
+      with:
+        name: playwright-traces
+        path: test-results   
 
 
       # logLevel:

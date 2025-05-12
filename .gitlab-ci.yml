@@ -20,6 +20,8 @@ test:
     - echo "ENV=$ENV" > .env # Create dotenv file
     - npx playwright test --grep-invert @Fail
   artifacts:
+    name: playwright-artifacts
     paths:
-      - playwright-report/
+      - playwright-report
+      - test-results
     expire_in: 1 week

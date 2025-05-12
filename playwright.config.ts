@@ -56,7 +56,7 @@ export default defineConfig({
     // use code below to test match multiple files
     // testMatch: ['**/*.ui.spec.ts', '**/*.e2e.spec.ts'], // Match UI and E2E test files
     {
-      name: 'API Tests',
+      name: 'api',
       testMatch: '**/*.api.spec.ts', // Match API test files
       use: {
         // You can specify any API-specific settings here
@@ -65,7 +65,7 @@ export default defineConfig({
 
     // Project for UI tests in Chromium
     {
-      name: 'UI Tests - Chromium',
+      name: 'chromium',
       testMatch: '**/*.ui.spec.ts', // Match UI test files
       // testMatch: ['**/*.ui.spec.ts', '**/*.integration.spec.ts'], // Match both UI and integration test files
       // testMatch: '**/*.(ui.spec|integration).ts', // Match both UI and integration test files
@@ -74,14 +74,14 @@ export default defineConfig({
 
     // Project for UI tests in Firefox
     {
-      name: 'UI Tests - Firefox',
+      name: 'firefox',
       testMatch: '**/*.ui.spec.ts', // Match UI test files
       use: { ...devices['Desktop Firefox'] },
     },
 
     // Project for UI tests in WebKit
     {
-      name: 'UI Tests - WebKit',
+      name: 'webkit',
       testMatch: '**/*.ui.spec.ts', // Match UI test files
       use: { ...devices['Desktop Safari'] },
     },
