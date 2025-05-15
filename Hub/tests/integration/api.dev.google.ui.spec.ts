@@ -2,6 +2,8 @@ import { expect } from "@playwright/test";
 import { test } from "../../hub-fixture";
 
 test.describe(`Sample Integration Tests`, {tag: ['@Integration', '@Sample']}, () => {
+    test.use({ viewport: { width: 1920, height: 1080 } });
+    
     test(`Get Objects`, {tag: ['@Get']}, async({restfulApiDevApi, googleCommonPage}) => {
         let objects = await restfulApiDevApi.getObjects();
         expect(objects.length).toEqual(13);
