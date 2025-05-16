@@ -6,7 +6,7 @@ import config from '../config.json';
 dotenv.config({ path: path.resolve(__dirname, '..', '.env') });
 
 // Determine the current environment
-const currentEnv = (process.env.ENV || 'sit').toLowerCase();
+export const currentEnv = (process.env.ENV || 'sit').toLowerCase();
 
 // const requiredEnvVars = ['USERNAME', 'PASSWORD'];
 // requiredEnvVars.forEach((varName) => {

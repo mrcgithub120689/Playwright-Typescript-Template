@@ -23,6 +23,8 @@ export const test = base.extend<HubFixture>({
     },
 });
 
+export const performanceLogs : PerformanceEntry[] = [];
+
 test.beforeAll(async () => {
     // Setup code that runs once before all tests
     console.log('Running setup before all tests');

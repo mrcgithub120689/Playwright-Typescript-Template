@@ -2,7 +2,7 @@ import { defineConfig, devices } from '@playwright/test';
 import * as path from 'path';
 import * as helper from './framework/helper'
 
-const reportDate = helper.reporterDateTimeFormat();
+export const reportDate = helper.reporterDateTimeFormat();
 
 /**
  * Read environment variables from file.
@@ -37,6 +37,15 @@ export default defineConfig({
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    launchOptions: {
+      args: [
+        '--disable-gpu',
+        '--use-gl=swiftshader',
+        '--disable-software-rasterizer',
+        '--disable-dev-shm-usage',
+        '--no-sandbox',
+      ],
+    },
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 
